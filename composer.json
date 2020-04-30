@@ -7,7 +7,8 @@
     },
     "autoload": {
         "psr-4": {
-            "LaSalle\\ChupiProject\\": "src/"
+            "LaSalle\\ChupiProject\\": "src/",
+            "LaSalle\\ChupiTest\\": "test/"
         }
     }
 }
