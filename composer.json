@@ -10,5 +10,8 @@
             "LaSalle\\ChupiProject\\": "src/",
             "LaSalle\\ChupiTest\\": "test/"
         }
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^7"
     }
 }
