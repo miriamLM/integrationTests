@@ -2,7 +2,7 @@
 
 namespace LaSalle\ChupiProject\Module\Color\Domain;
 
-use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotFoundCoolWordException;
+use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotFoundColorException;
 
 final class RandomColorSearcher
 {
@@ -18,7 +18,7 @@ final class RandomColorSearcher
         $colors = $this->repository->all();
 
         if (null === $colors || 0 === count($colors)) {
-            throw new NotFoundCoolWordException();
+            throw new NotFoundColorException();
         }
 
         return $colors[mt_rand(0, count($colors) - 1)];
