@@ -17,7 +17,7 @@ final class RandomColorSearcher
     {
         $colors = $this->repository->all();
 
-        if (null === $colors) {
+        if (null === $colors || 0 === count($colors)) {
             throw new NotFoundCoolWordException();
         }
 
