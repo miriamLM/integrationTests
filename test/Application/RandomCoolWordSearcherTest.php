@@ -32,9 +32,9 @@ final class RandomCoolWordSearcherTest extends TestCase
     {
         $this->expectException(NotFoundCoolWordException::class);
         $coolWordStub = new InMemoryEmptyCoolWordStub();
-        $randomColorSearcher = new RandomCoolWordSearcher($coolWordStub);
+        $randomCoolWordSearcher = new RandomCoolWordSearcher($coolWordStub);
 
-        $coolWordReceive = $randomColorSearcher();
+        $coolWordReceive = $randomCoolWordSearcher();
 
         $this->assertEquals([], $coolWordReceive);
 
