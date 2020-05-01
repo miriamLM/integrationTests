@@ -17,9 +17,9 @@ final class RandomCoolWordSearcherTest extends TestCase
     public function shouldGetRandomCoolWord()
     {
         $coolWordStub = new InMemoryCoolWordStub();
-        $randomColorSearcher = new RandomCoolWordSearcher($coolWordStub);
+        $randomCoolWordSearcher = new RandomCoolWordSearcher($coolWordStub);
 
-        $coolWordReceive = $randomColorSearcher();
+        $coolWordReceive = $randomCoolWordSearcher();
 
         $this->assertEquals('Chachi pistachi!', $coolWordReceive);
 
