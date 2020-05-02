@@ -16,7 +16,7 @@ final class CoolWordWithStyleCreatorTest extends TestCase
     /**
      * @test
     */
-    public function shouldGenerateDifferentRandomColor()
+    public function shouldCreateDifferentRandomColor()
     {
         $inMemoryColorRepository = new InMemoryColorRepository();
         $randomColorSearcher = new RandomColorSearcher($inMemoryColorRepository);
