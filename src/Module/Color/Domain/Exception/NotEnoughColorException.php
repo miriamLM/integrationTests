@@ -4,7 +4,7 @@ namespace LaSalle\ChupiProject\Module\Color\Domain\Exception;
 
 use DomainException;
 
-final class NotFoundColorException extends DomainException
+final class NotEnoughColorException extends DomainException
 {
     public function __construct()
     {
@@ -13,6 +13,6 @@ final class NotFoundColorException extends DomainException
 
     public function errorMessage():string
     {
-        return "Not found color.";
+        return "Not enough colors.";
     }
 }
