@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace LaSalle\ChupiTest\Application;
 
-use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotFoundColorException;
+use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotEnoughColorException;
 use LaSalle\ChupiProject\Module\Color\Domain\RandomColorSearcher;
 use LaSalle\ChupiTest\Infrastructure\{InMemoryColorStub, InMemoryEmptyColorStub};
 use PHPUnit\Framework\TestCase;
@@ -21,7 +21,10 @@ final class RandomColorSearcherTest extends TestCase
 
         $colorReceive = $randomColorSearcher();
 
-        $this->assertEquals('green', $colorReceive);
+        $colorCollection = ['green','cyan'];
+        $colorReceiveIsInColorCollection = in_array($colorReceive, $colorCollection);
+
+        $this->assertTrue($colorReceiveIsInColorCollection);
 
     }
 
@@ -30,7 +33,7 @@ final class RandomColorSearcherTest extends TestCase
      */
     public function shouldTrowExceptionWhenCoolWordCollectionIsEmpty()
     {
-        $this->expectException(NotFoundColorException::class);
+        $this->expectException(NotEnoughColorException::class);
 
         $colorStub = new InMemoryEmptyColorStub();
         $randomColorSearcher = new RandomColorSearcher($colorStub);
