@@ -6,7 +6,7 @@ use LaSalle\ChupiProject\Module\CoolWord\Domain\Exception\NotFoundCoolWordExcept
 
 final class RandomCoolWordSearcher
 {
-    private $repository;
+    private CoolWordRepository $repository;
 
     public function __construct(CoolWordRepository $repository)
     {
