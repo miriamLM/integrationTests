@@ -6,7 +6,7 @@ namespace LaSalle\ChupiTest\Application;
 
 use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotEnoughColorException;
 use LaSalle\ChupiProject\Module\Color\Domain\RandomColorSearcher;
-use LaSalle\ChupiTest\Infrastructure\{InMemoryColorStub, InMemoryEmptyColorStub};
+use LaSalle\ChupiTest\Infrastructure\{InMemoryColorLessThanTwoStub, InMemoryColorStub, InMemoryEmptyColorStub};
 use PHPUnit\Framework\TestCase;
 
 final class RandomColorSearcherTest extends TestCase
@@ -43,5 +43,22 @@ final class RandomColorSearcherTest extends TestCase
         $this->assertEquals([], $colorReceive);
 
     }
+
+    /**
+     * @test
+     */
+    public function shouldTrowExceptionWhenColorCollectionLengthIsLessThanTwo()
+    {
+        $this->expectException(NotEnoughColorException::class);
+
+        $colorStub = new InMemoryColorLessThanTwoStub();
+        $randomColorSearcher = new RandomColorSearcher($colorStub);
+
+        $colorReceive = $randomColorSearcher();
+
+        $this->assertEquals('green', $colorReceive);
+
+    }
+
 
 }
