@@ -8,6 +8,6 @@ final class InMemoryColorStub implements ColorRepository
 {
     public function all(): array
     {
-        return ['green'];
+        return ['green','cyan'];
     }
 }
