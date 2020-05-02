@@ -8,7 +8,7 @@ use LaSalle\ChupiProject\Module\Color\Domain\RandomColorSearcher;
 
 final class RandomColorExceptFake
 {
-    public function __invoke(string $colorExcept, RandomColorSearcher $randomColorSearcher):string
+    public function _random_color_except(string $colorExcept, RandomColorSearcher $randomColorSearcher):string
     {
         $randomColorGenerate = $colorExcept;
 
