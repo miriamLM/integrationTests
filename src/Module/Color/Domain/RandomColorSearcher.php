@@ -6,7 +6,7 @@ use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotEnoughColorException;
 
 final class RandomColorSearcher
 {
-    private $repository;
+    private ColorRepository $repository;
 
     public function __construct(ColorRepository $repository)
     {
