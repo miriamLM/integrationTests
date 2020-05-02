@@ -31,7 +31,7 @@ final class RandomColorSearcherTest extends TestCase
     /**
      * @test
      */
-    public function shouldTrowExceptionWhenCoolWordCollectionIsEmpty()
+    public function shouldTrowExceptionWhenColorCollectionIsEmpty()
     {
         $this->expectException(NotEnoughColorException::class);
 
@@ -43,4 +43,5 @@ final class RandomColorSearcherTest extends TestCase
         $this->assertEquals([], $colorReceive);
 
     }
+
 }
