@@ -2,7 +2,7 @@
 
 namespace LaSalle\ChupiProject\Module\Color\Domain;
 
-use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotFoundColorException;
+use LaSalle\ChupiProject\Module\Color\Domain\Exception\NotEnoughColorException;
 
 final class RandomColorSearcher
 {
@@ -17,8 +17,8 @@ final class RandomColorSearcher
     {
         $colors = $this->repository->all();
 
-        if (null === $colors || 0 === count($colors)) {
-            throw new NotFoundColorException();
+        if (null === $colors || 2 > count($colors)) {
+            throw new NotEnoughColorException();
         }
 
         return $colors[mt_rand(0, count($colors) - 1)];
