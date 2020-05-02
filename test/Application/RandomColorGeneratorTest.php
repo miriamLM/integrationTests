@@ -21,7 +21,7 @@ final class RandomColorGeneratorTest extends TestCase
 
         $randomColorExceptFake = new RandomColorExceptFake();
 
-        $actualColor = $randomColorExceptFake("green", $randomColorSearcher);
+        $actualColor = $randomColorExceptFake->_random_color_except("green", $randomColorSearcher);
 
         $this->assertNotEquals("green", $actualColor);
     }
