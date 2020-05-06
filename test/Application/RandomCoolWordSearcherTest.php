@@ -21,7 +21,7 @@ final class RandomCoolWordSearcherTest extends TestCase
 
         $coolWordReceive = $randomCoolWordSearcher();
 
-        $this->assertEquals('Chachi pistachi!', $coolWordReceive);
+        $this->assertEquals('Chachi pistachi!', $coolWordReceive, "Error: expect cool word->Chachi pistachi!, and received $coolWordReceive cool word");
 
     }
 
