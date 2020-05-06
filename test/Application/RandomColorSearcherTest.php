@@ -54,8 +54,6 @@ final class RandomColorSearcherTest extends TestCase
 
         $colorReceive = $randomColorSearcher();
 
-        $this->assertEquals('green', $colorReceive);
-
     }
 
 
