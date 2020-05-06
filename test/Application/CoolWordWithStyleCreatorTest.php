@@ -23,7 +23,7 @@ final class CoolWordWithStyleCreatorTest extends TestCase
 
         $actualColor = $randomColorExceptFake->_random_color_except("green", $randomColorSearcher);
 
-        $this->assertNotEquals("green", $actualColor);
+        $this->assertNotEquals("green", $actualColor, "error: not expect green color (catch $actualColor color)");
     }
 
 }
