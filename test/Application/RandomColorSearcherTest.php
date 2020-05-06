@@ -24,7 +24,7 @@ final class RandomColorSearcherTest extends TestCase
         $colorCollection = ['green','cyan'];
         $colorReceiveIsInColorCollection = in_array($colorReceive, $colorCollection);
 
-        $this->assertTrue($colorReceiveIsInColorCollection);
+        $this->assertTrue($colorReceiveIsInColorCollection, "Error: $colorReceive not found in: " . implode(",", $colorCollection));
 
     }
 
