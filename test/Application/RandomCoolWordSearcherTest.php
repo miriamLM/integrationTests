@@ -36,8 +36,6 @@ final class RandomCoolWordSearcherTest extends TestCase
 
         $coolWordReceive = $randomCoolWordSearcher();
 
-        $this->assertEquals([], $coolWordReceive);
-
     }
 
 
